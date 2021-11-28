@@ -6,22 +6,22 @@
     "type": "git",
     "url": "https://github.com/ktroitsky/graphcms-localized-textfields.git"
   },
+  "author": "Cyril Troitsky",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "prepublish": "tsc",
   "dependencies": {
     "@graphcms/uix-react-sdk": "^0.1.4",
     "fp-ts": "^2.11.5",
     "ramda": "^0.27.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.1.2"
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "tsc"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,7 @@
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0"
+    "@types/react-dom": "^17.0.0",
+    "typescript": "^4.1.2"
   }
 }
