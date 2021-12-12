@@ -38,6 +38,8 @@ export default App;
 Then, all you have to do is to host the website, and then provide GraphCMS with the link to it.
 In case you wish to have a both the single-line & the multi-like text fields, you can use a router library such as [Wouter](https://github.com/molefrog/wouter), and place each each version of the component on separate uris.
 
+Note that the GraphCMS SDK's **Wrapper** context is already built into the **LocalizedTextPage** component. In case you wish to customize the declaration or replace the context, feel free to import the **LocalizationsList** component, which is not Wrapped.
+
 # API
 
 **LocalizedTextPage** receives the following options:
