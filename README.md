@@ -2,6 +2,7 @@
 
 A GraphCMS UI Extension component for adding localized text fields to models.
 Looks like this:
+
 ![Extension screenshot](https://i.ibb.co/SVYVnFk/Screenshot-2021-12-12-at-19-23-29.png)
 
 # Usage
@@ -35,6 +36,7 @@ export default App;
 ```
 
 Then, all you have to do is to host the website, and then provide GraphCMS with the link to it.
+In case you wish to have a both the single-line & the multi-like text fields, you can use a router library such as [Wouter](https://github.com/molefrog/wouter), and place each each version of the component on separate uris.
 
 # API
 
