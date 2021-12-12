@@ -5,6 +5,8 @@ Looks like this:
 
 ![Extension screenshot](https://i.ibb.co/SVYVnFk/Screenshot-2021-12-12-at-19-23-29.png)
 
+Under the hood, the field will be of the JSON format, mapping the language code to the string in the input.
+
 # Usage
 
 A basic example of usage can be like this:
