@@ -59,12 +59,4 @@ const LocalizationsList: React.FC<LocalizationsListProps> = ({
   );
 };
 
-const WrappedLocalizationsList: React.FC<LocalizationsListProps> = (props) => {
-  return (
-    <Wrapper declaration={tableDeclaration}>
-      <LocalizationsList {...props} />
-    </Wrapper>
-  );
-};
-
-export default React.memo(WrappedLocalizationsList);
+export default React.memo(LocalizationsList);
