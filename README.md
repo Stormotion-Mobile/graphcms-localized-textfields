@@ -2,7 +2,7 @@
 
 A GraphCMS UI Extension component for adding localized text fields to models.
 Looks like this:
-![Extension screenshot](https://ibb.co/wpGpW5n)
+![Extension screenshot](https://i.ibb.co/SVYVnFk/Screenshot-2021-12-12-at-19-23-29.png)
 
 # Usage
 
