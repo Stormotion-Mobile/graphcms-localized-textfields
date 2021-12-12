@@ -4,6 +4,7 @@ import { Wrapper } from "@graphcms/uix-react-sdk";
 import LocalizationsList, {
   LocalizationsListProps,
 } from "../components/LocalizationsList";
+import "../index.css";
 
 const LocalizedTextPage: React.FC<LocalizationsListProps> = (props) => {
   return (

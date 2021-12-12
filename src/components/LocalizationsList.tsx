@@ -1,21 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
-import {
-  tableDeclaration,
-  TableDeclarationType,
-} from "../utils/graphCmsDeclarations";
-import { useUiExtension, Wrapper } from "@graphcms/uix-react-sdk";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { TableDeclarationType } from "../utils/graphCmsDeclarations";
+import { useUiExtension } from "@graphcms/uix-react-sdk";
 import * as R from "ramda";
 import LocalizationItem, { OnChangeTextCallback } from "./LocalizationItem";
 import { areLocalizedFieldsValid } from "../utils/localizationsHelpers";
+import languages from "../utils/localeToLanguage";
 
 export type LocalizationsListProps = {
   locales: string[];
   isMultiline?: boolean;
+  mapLocaleCodeToString?: Record<string, string>;
 };
 
 const LocalizationsList: React.FC<LocalizationsListProps> = ({
   locales,
   isMultiline,
+  mapLocaleCodeToString,
 }) => {
   const { onChange, value } = useUiExtension<TableDeclarationType>();
 
@@ -37,6 +37,14 @@ const LocalizationsList: React.FC<LocalizationsListProps> = ({
     [currentValues, onChangeValues]
   );
 
+  const languageCodeMapper = useMemo(
+    () =>
+      mapLocaleCodeToString
+        ? R.mergeRight(languages, mapLocaleCodeToString)
+        : languages,
+    [mapLocaleCodeToString]
+  );
+
   const renderLocalizationItem = useCallback<(code: string) => JSX.Element>(
     (code) => {
       return (
@@ -46,10 +54,11 @@ const LocalizationsList: React.FC<LocalizationsListProps> = ({
           onChangeText={onChangeText}
           localeCode={code}
           localizedText={currentValues[code] ?? ""}
+          mapLocaleCodeToString={languageCodeMapper}
         />
       );
     },
-    [currentValues, isMultiline, onChangeText]
+    [currentValues, isMultiline, onChangeText, languageCodeMapper]
   );
 
   return (

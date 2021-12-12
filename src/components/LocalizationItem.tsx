@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo } from "react";
-import languages from "../utils/localeToLanguage";
 
 type ChangeTextEvent = { target: { value: string } };
 
@@ -13,6 +12,7 @@ type LocalizationItemProps = {
   localizedText: string;
   onChangeText: OnChangeTextCallback;
   isMultiline?: boolean;
+  mapLocaleCodeToString: Record<string, string>;
 };
 
 const LINES_NUMBER = 4;
@@ -22,6 +22,7 @@ const LocalizationItem: React.FC<LocalizationItemProps> = ({
   localizedText,
   onChangeText,
   isMultiline = false,
+  mapLocaleCodeToString,
 }) => {
   const onChange = useCallback<(event: ChangeTextEvent) => void>(
     (event) => onChangeText(event, localeCode),
@@ -50,7 +51,7 @@ const LocalizationItem: React.FC<LocalizationItemProps> = ({
   return (
     <div className="localization-item-container">
       <p className="localization-item-caption">
-        {languages[localeCode] ?? localeCode}
+        {mapLocaleCodeToString[localeCode] ?? localeCode}
       </p>
 
       {Input}
