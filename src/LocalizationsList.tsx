@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { TableDeclarationType } from "./utils/graphCmsDeclarations";
-import { useUiExtension } from "@graphcms/uix-react-sdk";
+import {
+  tableDeclaration,
+  TableDeclarationType,
+} from "./utils/graphCmsDeclarations";
+import { useUiExtension, Wrapper } from "@graphcms/uix-react-sdk";
 import * as R from "ramda";
 import LocalizationItem, { OnChangeTextCallback } from "./LocalizationItem";
 import { areLocalizedFieldsValid } from "./utils/localizationsHelpers";
@@ -56,4 +59,12 @@ const LocalizationsList: React.FC<LocalizationsListProps> = ({
   );
 };
 
-export default React.memo(LocalizationsList);
+const WrappedLocalizationsList: React.FC<LocalizationsListProps> = (props) => {
+  return (
+    <Wrapper declaration={tableDeclaration}>
+      <LocalizationsList {...props} />
+    </Wrapper>
+  );
+};
+
+export default React.memo(WrappedLocalizationsList);
