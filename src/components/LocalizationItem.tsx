@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import languages from "./utils/localeToLanguage";
+import languages from "../utils/localeToLanguage";
 
 type ChangeTextEvent = { target: { value: string } };
 

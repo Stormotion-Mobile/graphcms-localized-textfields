@@ -2,13 +2,13 @@ import React, { useCallback, useEffect, useState } from "react";
 import {
   tableDeclaration,
   TableDeclarationType,
-} from "./utils/graphCmsDeclarations";
+} from "../utils/graphCmsDeclarations";
 import { useUiExtension, Wrapper } from "@graphcms/uix-react-sdk";
 import * as R from "ramda";
 import LocalizationItem, { OnChangeTextCallback } from "./LocalizationItem";
-import { areLocalizedFieldsValid } from "./utils/localizationsHelpers";
+import { areLocalizedFieldsValid } from "../utils/localizationsHelpers";
 
-type LocalizationsListProps = {
+export type LocalizationsListProps = {
   locales: string[];
   isMultiline?: boolean;
 };
