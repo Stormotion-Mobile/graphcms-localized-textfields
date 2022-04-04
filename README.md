@@ -12,7 +12,7 @@ Under the hood, the field will be of the JSON format, mapping the language code 
 A basic example of usage can be like this:
 
 ```js
-import { LocalizedTextPage } from "graphcms-localized-textfields";
+import { LocalizedTextPage } from "@stormotion/graphcms-localized-textfields";
 
 const locales = ["en", "de", "ch", "ru", "uk"];
 
